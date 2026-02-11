@@ -66,6 +66,7 @@ def init_session():
         "entries": {},
         "current_template": None,
         "bench_court_name": "",
+        "generated_docx": None,
         "autofill_mode": False
     }
     for k, v in defaults.items():
@@ -233,66 +234,49 @@ def main():
 
     # -------- GENERATE DOC --------
     if submitted:
-        # VALIDATION: Check all fields are filled
         empty_fields = []
         data = {}
-        
+
         for key, value in entries.items():
             clean_value = (value or "").strip()
             data[key] = clean_value
-            
-            # Skip validation for "year" field (auto-filled)
-            if key == "year":
-                continue
-                
-            # Check if field is empty
-            if not clean_value:
-                # Find the field label for better error message
-                field_label = key  # default to key name
+
+            if key != "year" and not clean_value:
                 for field_key, label in mod.FIELDS:
                     if field_key == key:
-                        field_label = label
+                        empty_fields.append(label)
                         break
-                empty_fields.append(field_label)
-        
-        # If any required fields are empty, show error and STOP
+
         if empty_fields:
-            st.error("❌ **Please fill all required fields:**")
+            st.error("❌ Please fill all required fields:")
             for field in empty_fields:
                 st.write(f"• {field}")
-            st.warning("All fields must be completed before generating document.")
-            
-            # Show the download button as DISABLED
-            st.button(
-                "⬇️ Download Word Document (Disabled - Fill All Fields)",
-                disabled=True,
-                help="Complete all fields to enable download"
-            )
-            
-            # Don't generate document
-            return  # Exit the function early
-        
-        # ✅ ALL FIELDS FILLED - Generate document
+            return
+
+        # ✅ Generate document ONCE
         doc = Document(st.session_state.current_template)
         replace_placeholders(doc, data)
 
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".docx") as tmp:
-            doc.save(tmp.name)
-            tmp_path = tmp.name
+        import io
+        buffer = io.BytesIO()
+        doc.save(buffer)
+        buffer.seek(0)
 
-        with open(tmp_path, "rb") as f:
-            st.download_button(
-                "⬇️ Download Word Document",
-                data=f.read(),
-                file_name=f"{case}_{date.today().strftime('%Y%m%d')}.docx",
-                mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-            )
+        # ✅ STORE BYTES (this is the key fix)
+        st.session_state.generated_docx = buffer.getvalue()
 
-        os.unlink(tmp_path)
         st.success("✅ Document generated successfully!")
-
-        # Clear autofill after successful submit
         st.session_state.autofill_mode = False
+
+if st.session_state.get("generated_docx"):
+    st.download_button(
+        label="⬇️ Download Word Document",
+        data=st.session_state.generated_docx,
+        file_name=f"{st.session_state.get('selected_case', 'draft')}_{date.today().strftime('%Y%m%d')}.docx",
+        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    )
+
+
 
 
 

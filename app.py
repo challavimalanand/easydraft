@@ -107,9 +107,18 @@ def main():
 
         benches = load_benches(state, court)
         bench = ""
+
         if benches:
-            bench = st.selectbox("Bench", [""] + benches, key="bench_sel")
+            # If only one bench → auto select
+            if len(benches) == 1:
+                bench = benches[0]
+                st.session_state.bench_sel = bench
+                st.write(f"Bench: {bench}")  # Display without dropdown
+            else:
+                bench = st.selectbox("Bench", [""] + benches, key="bench_sel")
+
         st.session_state.selected_bench = bench
+
 
         cases = load_cases(state, court)
         case = st.selectbox("Case Type", cases, key="case_sel")

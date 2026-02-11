@@ -268,18 +268,13 @@ def main():
         st.success("✅ Document generated successfully!")
         st.session_state.autofill_mode = False
 
-
-download_slot = st.empty()
-
-with download_slot:
-    if st.session_state.get("generated_docx"):
-        st.download_button(
-            label="⬇️ Download Word Document",
-            data=st.session_state.generated_docx,
-            file_name=f"{st.session_state.get('selected_case', 'draft')}_{date.today().strftime('%Y%m%d')}.docx",
-            mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        )
-
+if st.session_state.get("generated_docx"):
+    st.download_button(
+        label="⬇️ Download Word Document",
+        data=st.session_state.generated_docx,
+        file_name=f"{st.session_state.get('selected_case', 'draft')}_{date.today().strftime('%Y%m%d')}.docx",
+        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    )
 
 
 

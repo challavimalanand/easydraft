@@ -1,14 +1,13 @@
-MODULE_NAME = "Legal Heir Suit"
-TEMPLATE = "legal_heir_case.docx"
+MODULE_NAME = "divorce_mutual"
+TEMPLATE = "divorce_mutual.docx"
 
 FIELDS = [
     ("court_name", "Court Name"),
     ("year", "Year"),
-    ("suit_for", "Suit for"),
-    ("pet_name", "Plaintiff Name"),
-    ("petitioner", "Plaintiff Full Details"),
-    ("res_name", "Defendant Name"),
-    ("respondent", "Defendant Full Details"),
+    ("pet_name", "Petitioner No.1 Name"),
+    ("petitioner", "Petitioner No.1 Full Details"),
+    ("res_name", "Petitioner No.2 Name"),
+    ("respondent", "Petitioner No.2 Full Details"),
     ("adv_name", "Advocate Name"),
     ("counsel_for", "Counsel For"),
     ("address_for_service", "Address for Service"),

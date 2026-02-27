@@ -11,7 +11,6 @@ FIELDS = [
     ("adv_name", "Advocate Name"),
     ("counsel_for", "Counsel For"),
     ("address_for_service", "Address for Service"),
-    ("summons_address", "Summons Address"),
     ("place", "Place"),
     ("aff_oath", "Name of Deponent"),
 ]

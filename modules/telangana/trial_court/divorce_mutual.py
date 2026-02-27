@@ -13,5 +13,6 @@ FIELDS = [
     ("counsel_for", "Counsel For"),
     ("address_for_service", "Address for Service"),
     ("place", "Place"),
-    ("aff_oath", "Name of Deponent"),
+    ("aff_oath", "Name of Petitioner No.1"),
+    ("respondent_oath", "Name of Petitioner No.2"),
 ]

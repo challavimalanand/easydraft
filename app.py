@@ -192,7 +192,7 @@ def main():
 
     # -------- FORM LOAD --------
     # -------- AUTO RESET ON COURT / CASE CHANGE --------
-    '''
+    
     if (
         st.session_state.prev_state != state or
         st.session_state.prev_court != court or
@@ -234,66 +234,6 @@ def main():
     if is_high and bench:
         bench_court_name = get_court_name_for_bench(state, court, bench)
     st.session_state.bench_court_name = bench_court_name
-    '''
-
-        # -------- FORM LOAD --------
-    # -------- AUTO RESET ON COURT / CASE CHANGE --------
-    if (
-        st.session_state.prev_state != state or
-        st.session_state.prev_court != court or
-        st.session_state.prev_case != case
-    ):
-        # Clear generated document
-        if "generated_docx" in st.session_state:
-            del st.session_state.generated_docx
-
-        # Reset smart-filled values safely
-        st.session_state.autofill_mode = False
-        st.session_state.bench_court_name = ""
-        st.session_state.dof_value = ""
-
-        # Update form version (forces UI rebuild)
-        st.session_state.form_version += 1
-
-    # Update previous trackers
-    st.session_state.prev_state = state
-    st.session_state.prev_court = court
-    st.session_state.prev_case = case
-
-
-    if not (state and court and case):
-        st.info("Select State, Court, and Case to continue.")
-        return
-
-    # ✅ FIXED: Check if module exists
-    mod_path = os.path.join(MODULES_DIR, state, court, f"{case}.py")
-    if not os.path.exists(mod_path):
-        st.error(f"❌ Module file not found: {mod_path}")
-        st.error("Please ensure the .py file exists in the correct folder")
-        st.stop()
-    
-    mod = load_python_module(mod_path)
-
-    # ✅ FIXED: Check if template exists
-    template_path = os.path.join(TEMPLATES_DIR, state, court, f"{case}.docx")
-    if not os.path.exists(template_path):
-        st.error(f"❌ Template file not found: {template_path}")
-        st.error("Please ensure the .docx file exists in the correct folder")
-        st.stop()
-    
-    st.session_state.current_template = template_path
-
-    # Bench-based court name
-    is_high = "high" in court.lower()
-    bench_court_name = ""
-    if is_high and bench:
-        bench_court_name = get_court_name_for_bench(state, court, bench)
-        if bench_court_name:
-            st.session_state.bench_court_name = bench_court_name
-
-
-
-
 
     # -------- FORM UI --------
     st.subheader("Document Details")

@@ -4,7 +4,6 @@ TEMPLATE = "divorce_mutual.docx"
 FIELDS = [
     ("court_name", "Court Name"),
     ("year", "Year"),
-    ("suit_for", "Suit for"),
     ("pet_name", "Petitioner No.1 Name"),
     ("petitioner", "Petitioner No.1 Full Details"),
     ("res_name", "Petitioner No.2 Name"),

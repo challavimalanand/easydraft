@@ -1,58 +1,16 @@
-# ============================================================
-# EasyDraft Module
-# High Court – Andhra Pradesh
-# Criminal Petition (Crl.P.) – Sec. 528 BNSS
-# ============================================================
-
-MODULE_NAME = "High Court – Andhra Pradesh – Criminal Petition (Crl.P.) Quash"
-
-TEMPLATE_FILE = "quash.docx"
-
-# modules/Andhra Pradesh/high_court/quash.py
-
 FIELDS = [
-    ("court_name", "Court Name"),
-    ("place", "Place"),
-    # --------------------------------------------------------
-    # Filing & Case Details
-    # --------------------------------------------------------
-    ("year", "Year"),
     ("dof", "Date of Filing"),
-
-    
-
-    ("case_no", "Lower Court Case Number"),
+    ("case_no", "Case Number"),
     ("lower_court_name", "Lower Court Name"),
+    ("petitioner", "Appellant/Petitioner/Plaintiff/Complianant Full Details"),
+    ("respondent", "Respondent/Defendant/Accused Full Details"),
+    ("summons_address", "Summons Address"),
     ("lcod", "Lower Court Order Date"),
-
+    ("main_prayer", "Main Prayer"),
+    ("interim_prayer", "Interim Prayer"),
     ("district", "District"),
-
-
-
-    # --------------------------------------------------------
-    # Party Details
-    # --------------------------------------------------------
-    ("pet_name", "Petitioner Name (Short Cause Title)"),
-    ("res_name", "Respondent Name (Short Cause Title)"),
-
-    ("petitioner", "Petitioner / Accused (Full Description)"),
-    ("respondent", "Respondent (Full Description)"),
-
-    # --------------------------------------------------------
-    # Advocate & Address Details
-    # --------------------------------------------------------
     ("adv_name", "Advocate Name"),
-    ("summons_address", "Address for Service / Counsel Address"),
-    ("address_for_service", "Address for Service (Vakalat)"),
-
-    # --------------------------------------------------------
-    # Affidavit / Vakalat
-    # --------------------------------------------------------
-    ("aff_oath", "Name of Deponent (Affidavit Oath)"),
-
-    # --------------------------------------------------------
-    # Prayers
-    # --------------------------------------------------------
-    ("main_prayer", "Main Prayer (Quash Relief)"),
-    ("interim_prayer", "Interim / Stay / Dispense Prayer"),
+    ("pet_name", "Appellant/Petitioner/Plaintiff/Complianant Name"),
+    ("res_name", "Respondent/Defendant/Accused Name"),
+    ("aff_oath", "Name of Deponent"),
 ]

@@ -1,4 +1,4 @@
-MODULE_NAME = "High Court – Andhra Pradesh (Writ Petition)"
+MODULE_NAME = "High Court – Telangana (Writ Petition)"
 
 TEMPLATE_FILE = "Writ_Petition.docx"
 

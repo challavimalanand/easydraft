@@ -1,18 +1,15 @@
-MODULE_NAME = "Legal Heir Suit"
-TEMPLATE = "legal_heir_case.docx"
-
 FIELDS = [
     ("court_name", "Court Name"),
     ("year", "Year"),
+    ("petitioner", "Appellant/Petitioner/Plaintiff/Complianant Full Details"),
+    ("respondent", "Respondent/Defendant/Accused Full Details"),
     ("suit_for", "Suit for"),
-    ("pet_name", "Plaintiff Name"),
-    ("petitioner", "Plaintiff Full Details"),
-    ("res_name", "Defendant Name"),
-    ("respondent", "Defendant Full Details"),
-    ("adv_name", "Advocate Name"),
-    ("counsel_for", "Counsel For"),
-    ("address_for_service", "Address for Service"),
     ("summons_address", "Summons Address"),
     ("place", "Place"),
     ("aff_oath", "Name of Deponent"),
+    ("pet_name", "Appellant/Petitioner/Plaintiff/Complianant Name"),
+    ("res_name", "Respondent/Defendant/Accused Name"),
+    ("adv_name", "Advocate Name"),
+    ("counsel_for", "Counsel For"),
+    ("address_for_service", "Address for Service"),
 ]

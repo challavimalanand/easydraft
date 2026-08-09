@@ -1,38 +1,15 @@
-# ============================================================
-# EasyDraft Module
-# High Court – Telangana
-# Appeal Suit (A.S.)
-# ============================================================
-
-MODULE_NAME = "High Court – Telangana – Appeal Suit (A.S.)"
-
-TEMPLATE_FILE = "AS.docx"
-
 FIELDS = [
-    ("court_name", "Court Name"),
-    ("place", "Place"),
-
-    ("year", "Year"),
     ("dof", "Date of Filing"),
-
-    ("district", "District"),
-
-    ("case_no", "Lower Court Case Number"),
+    ("pet_name", "Appellant/Petitioner/Plaintiff/Complianant Name"),
+    ("res_name", "Respondent/Defendant/Accused Name"),
     ("lower_court_name", "Lower Court Name"),
-    ("lcod", "Lower Court Order / Decree Date"),
-
-    ("pet_name", "Petitioner Name"),
-    ("petitioner", "Petitioner (Full Description)"),
-
-    ("res_name", "Respondent Name"),
-    ("respondent", "Respondent (Full Description)"),
-
-    ("adv_name", "Advocate Name"),
-
+    ("case_no", "Case Number"),
+    ("petitioner", "Appellant/Petitioner/Plaintiff/Complianant Full Details"),
+    ("respondent", "Respondent/Defendant/Accused Full Details"),
     ("summons_address", "Summons Address"),
-    ("address_for_service", "Address for Service"),
-
-    ("aff_oath", "Deponent / Affidavit Details"),
-
+    ("lcod", "Lower Court Order Date"),
+    ("district", "District"),
+    ("adv_name", "Advocate Name"),
+    ("aff_oath", "Name of Deponent"),
     ("interim_prayer", "Interim Prayer"),
 ]

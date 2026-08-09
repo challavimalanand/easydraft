@@ -1,0 +1,16 @@
+FIELDS = [
+    ("dof", "Date of Filing"),
+    ("pet_name", "Appellant/Petitioner/Plaintiff/Complianant Name"),
+    ("res_name", "Respondent/Defendant/Accused Name"),
+    ("lower_court_name", "Lower Court Name"),
+    ("petitioner", "Appellant/Petitioner/Plaintiff/Complianant Full Details"),
+    ("respondent", "Respondent/Defendant/Accused Full Details"),
+    ("main_prayer", "Main Prayer"),
+    ("district", "District"),
+    ("adv_name", "Advocate Name"),
+    ("aff_oath", "Name of Deponent"),
+    ("address_for_service", "Address for Service"),
+    ("interim_prayer", "Interim Prayer"),
+    ("lcod", "Lower Court Order Date"),
+    ("case_no", "Case Number"),
+]

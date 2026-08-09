@@ -14,9 +14,8 @@ from utils import (
 # ---------------- HARDCODED USERS (Username: Plain Password) ----------------
 USERS = {
     "admin": "admin12345",      # password: "admin12345"
-    "chetluru": "chetluru09",   # password: "chetluru09"
     "ramana": "ramana61",       # password: "ramana61"
-    "ravikiran": "ravi$5269",       # password: "ramana61"
+    "ravi": "ravi",       # password: "ramana61"
 }
 
 # ---------------- LOGIN FUNCTIONS ----------------

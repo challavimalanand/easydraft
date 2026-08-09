@@ -1,37 +1,37 @@
-easydraft-s/                    # ⭐ BASE FOLDER (Changed to easydraft-s)
-├── app.py                         # 🆕 NEW - Main Streamlit application
-├── requirements.txt               # 🆕 NEW - Python dependencies
-├── utils.py                       # 🔄 MIXED - Old functions adapted
-├── modules/                       # ✅ SAME - Direct copy from original
+easydraft/
+├── app.py
+├── utils.py
+├── requirements.txt
+│
+├── modules/
 │   ├── telangana/
 │   │   ├── high_court/
-│   │   │   └── Writ_Petition.py       # Contains FIELDS list
+│   │   │   └── Writ_Petition.py
 │   │   └── trial_court/
 │   │       └── Original_Suit.py
-│   └── andhra_pradesh/           # ✅ Folder name exactly as shown
+│   │
+│   └── andhra_pradesh/
 │       ├── high_court/
 │       │   └── Writ_Petition.py
 │       └── trial_court/
 │           └── Original_Suit.py
-├── templates/                     # ✅ SAME - Direct copy from original
+│
+├── templates/
 │   ├── telangana/
 │   │   ├── high_court/
 │   │   │   └── Writ_Petition.docx
 │   │   └── trial_court/
 │   │       └── Original_Suit.docx
+│   │
 │   └── andhra_pradesh/
 │       ├── high_court/
 │       │   └── Writ_Petition.docx
 │       └── trial_court/
 │           └── Original_Suit.docx
-├── defaults/                      # ✅ SAME - Direct copy from original
-│   ├── courts/
-│   │   ├── telangana_high_court.txt
-│   │   ├── telangana_high_court_hyderabad.txt
-│   │   ├── telangana_high_court_warangal.txt
-│   │   ├── andhra_pradesh_high_court.txt
-│   │   ├── andhra_pradesh_high court_amaravati.txt     # Note space in filename
-│   │   └── andhra_pradesh_high court_kurnool.txt       # Note space in filename
-│   ├── address_for_service.txt
-│   └── summons_address.txt
-└── README.md                      # 🆕 NEW - Documentation
+│
+└── defaults/
+    └── courts/
+        ├── andhra_pradesh_high_court.txt
+        ├── andhra_pradesh_high_court_amaravati.txt
+        ├── telangana_high_court.txt
+        └── telangana_high_court_hyderabad.txt

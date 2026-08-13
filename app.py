@@ -13,7 +13,7 @@ from utils import (
 
 # ---------------- HARDCODED USERS (Username: Plain Password) ----------------
 USERS = {
-    "admin": "admin12345",      # password: "admin12345"
+    "admin": "admin9876",      # password: "admin12345"
     "ramana": "ramana61",       # password: "ramana61"
     "ravi": "ravi",       # password: "ramana61"
 }

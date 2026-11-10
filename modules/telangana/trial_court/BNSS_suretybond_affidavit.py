@@ -1,0 +1,17 @@
+FIELDS = [
+    ("court_name", "Court Name"),
+    ("case_number", "Case Number"),
+    ("police_station_name", "Police Station Name"),
+    ("accused_name", "Accused Name"),
+    ("accused_number", "Accused Number in case"),
+    ("offences_under_section", "Offences under section in case"),
+    ("surety_1_aff_oath", "First Surety Oath Affidavit"),
+    ("surety_amount", "Surety Amount"),
+    ("date", "Date"),
+    ("year", "Year"),
+    ("surety_1_name", "First Surety Name"),
+    ("place", "Place"),
+    ("advocate_name", "Advocate Name"),
+    ("surety_2_aff_oath", "Second Surety Oath Affidavit"),
+    ("surety_2_name", "Second Surety Name"),
+]
